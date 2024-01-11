@@ -1,4 +1,10 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+// next.config.js
 
-module.exports = nextConfig
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  images: {
+    domains: ["s120-ava-talk-zmp3.zmdcdn.me"]
+  }
+};
+
+module.exports = nextConfig;
