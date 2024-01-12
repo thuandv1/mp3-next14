@@ -3,7 +3,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    domains: ["s120-ava-talk-zmp3.zmdcdn.me"]
+    domains: ["s120-ava-talk-zmp3.zmdcdn.me", "static-zmp3.zmdcdn.me"]
   }
 };
 
