@@ -1,0 +1,18 @@
+.first,
+.second,
+.third,
+.fourth {
+  transition: all 0.5s ease-in;
+}
+
+.first {
+  transform: translateX(0);
+}
+
+.second {
+  transform: translateX(115%);
+}
+
+.third {
+  transform: translateX(232%);
+}

@@ -2,13 +2,21 @@
 
 import { leftBar } from "@/constants/leftBar";
 import Image from "next/image";
+import { useState } from "react";
 import { FaRegCirclePlay } from "react-icons/fa6";
 import { MdOutlineLibraryMusic } from "react-icons/md";
 
 function LeftBar() {
+  const [collapseMenu, setCollapseMenu] = useState(false);
+
   return (
-    <nav className="pt-6 w-60  h-screen bg-white bg-opacity-10 flex flex-col">
-      <div className="ml-7 mb-6 w-32 h-10 relative">
+    <nav
+      onClick={() => setCollapseMenu((prev) => !prev)}
+      className={`pt-6 h-screen bg-white bg-opacity-10 flex flex-col overflow-hidden ${
+        collapseMenu ? "w-6" : "w-60"
+      }`}
+    >
+      <div className="ml-7 w-32 h-20 relative">
         <Image
           alt=""
           fill
@@ -18,25 +26,25 @@ function LeftBar() {
         />
       </div>
 
-      <ul className="">
+      <ul className="mt-7">
         {leftBar.slice(0, 3).map((item, index) => (
           <li
             className={`pl-7 relative flex gap-4 items-center py-3 text-sm font-normal opacity-80 cursor-pointer  ${
               index !== 0 && "hover:opacity-100 group"
-            } ${
-              index === 0 &&
-              "font-semibold bg-white bg-opacity-5 border-l-4 pl-6 border-purple-600"
-            }`}
+            } ${index === 0 && "font-semibold bg-white bg-opacity-5"}`}
             key={item}
           >
             <MdOutlineLibraryMusic className="text-2xl" />
             {item}
             <FaRegCirclePlay className="hidden group-hover:inline-block text-lg absolute right-4 top-1/2 -translate-y-1/2" />
+            {index === 0 && (
+              <span className="absolute left-0 w-1 h-full bg-purple-600"></span>
+            )}
           </li>
         ))}
         <li className="border-t border-white border-opacity-25 backdrop-blur-sm h-5"></li>
       </ul>
-      <ul className="overflow-y-hidden hover:overflow-y-scroll">
+      <ul className="overflow-y-hidden overflow-x-hidden hover:overflow-y-scroll">
         {leftBar.slice(3, 6).map((item, index) => (
           <li
             className={
