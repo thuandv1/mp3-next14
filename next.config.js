@@ -6,7 +6,9 @@ const nextConfig = {
     domains: [
       "s120-ava-talk-zmp3.zmdcdn.me",
       "static-zmp3.zmdcdn.me",
-      "photo-zmp3.zmdcdn.me"
+      "photo-zmp3.zmdcdn.me",
+      "photo-resize-zmp3.zmdcdn.me",
+      "*"
     ]
   }
 };
