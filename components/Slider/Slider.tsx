@@ -2,7 +2,7 @@
 
 import classNames from "classnames";
 import Image from "next/image";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useState } from "react";
 import { GrNext, GrPrevious } from "react-icons/gr";
 
 import "./slide.scss";
@@ -57,7 +57,15 @@ function Slider() {
         </div>
       ))}
 
-      <div className="z-10 hidden absolute right-16 top-1/2 -translate-y-1/2 bg-white bg-opacity-10 w-14 h-14 rounded-full group-hover:flex cursor-pointer items-center justify-center">
+      <div 
+        onClick={() => {
+          setItemIndex((prevIndex) => {
+            const [a, b, c] = prevIndex;
+
+            return [b, c, a];
+          });
+        }}
+      className="z-10 hidden absolute right-2 top-1/2 -translate-y-1/2 bg-white bg-opacity-10 w-14 h-14 rounded-full group-hover:flex cursor-pointer items-center justify-center">
         <GrNext className="text-xl" />
       </div>
       <div

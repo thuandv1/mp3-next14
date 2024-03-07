@@ -1,6 +1,5 @@
 "use client"; //create context error
 
-import { HoverCardTrigger } from "@radix-ui/react-hover-card";
 import Image from "next/image";
 import { CiSettings } from "react-icons/ci";
 import { GoDesktopDownload } from "react-icons/go";
@@ -8,7 +7,7 @@ import { GrLinkNext, GrLinkPrevious } from "react-icons/gr";
 import { IoMdSearch } from "react-icons/io";
 import { AiOutlinePlayCircle } from "react-icons/ai";
 
-import { HoverCard } from "@/components/ui/hover-card";
+import { HoverCard, HoverCardContent, HoverCardTrigger } from "@/components/ui/hover-card";
 import {
   Popover,
   PopoverContent,
@@ -35,7 +34,7 @@ function Header(props: IProps) {
       </div>
       <div className="flex gap-10">
         <div className="bg-white bg-opacity-5 w-42 px-8 py-2 flex items-center gap-3 rounded-full cursor-pointer">
-          <GoDesktopDownload className="text-purple-600" />
+          <GoDesktopDownload className="text-purple-600 font-bold" />
           <span className="text-purple-600">Download Windows</span>
         </div>
         <Popover>
@@ -44,17 +43,27 @@ function Header(props: IProps) {
               <CiSettings className="text-xl" />
             </div>
           </PopoverTrigger>
-          <PopoverContent className="bg-purple-950 text-white border-none">
-            <HoverCard>
+          <PopoverContent className="bg-purple-primary text-white border-none">
+            <HoverCard >
               <HoverCardTrigger>
-                <div className="flex gap-3 items-center">
-                  <AiOutlinePlayCircle className="text-2xl font-light"/>
-                  <div className="flex flex-1 justify-between items-center">
-                    Trình phát nhạc
-                    <MdOutlineNavigateNext className="text-2xl font-light"/>
+                <div className="flex flex-col">
+                  <div className="flex gap-3 items-center py-5 hover:bg-slate-300 hover:bg-opacity-30">
+                    <AiOutlinePlayCircle className="text-2xl font-light"/>
+                    <div className="flex flex-1 justify-between items-center">
+                      Trình phát nhạc
+                      <MdOutlineNavigateNext className="text-2xl font-light"/>
+                    </div>
+                  </div>
+                  <div className="flex gap-3 items-center py-5 hover:bg-slate-300 hover:bg-opacity-30">
+                    <AiOutlinePlayCircle className="text-2xl font-light"/>
+                    <div className="flex flex-1 justify-between items-center">
+                      Giao diện
+                      <MdOutlineNavigateNext className="text-2xl font-light"/>
+                    </div>
                   </div>
                 </div>
               </HoverCardTrigger>
+              <HoverCardContent className="bg-purple-primary text-white border-none shadow-sm shadow-slate-950" side="left">Hello Nolan</HoverCardContent>
             </HoverCard>
           </PopoverContent>
         </Popover>
