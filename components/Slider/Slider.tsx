@@ -42,13 +42,13 @@ function Slider() {
     <div
       onMouseEnter={() => setIsFocus(true)}
       onMouseLeave={() => setIsFocus(false)}
-      className="flex gap-5 relative group w-full h-40"
+      className="flex gap-5 relative group w-full h-44"
     >
       {initImages.map((item, index) => (
         <div
           key={item}
           className={classNames(
-            "w-72 h-40 rounded-lg overflow-hidden absolute z-10 cursor-pointer",
+            "w-80 h-44 rounded-lg overflow-hidden absolute z-10 cursor-pointer",
             itemIndex[index],
             index === 2 && "z-0"
           )}

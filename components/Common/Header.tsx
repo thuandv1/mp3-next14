@@ -19,7 +19,7 @@ interface IProps {}
 
 function Header(props: IProps) {
   return (
-    <header className="flex items-center px-10 mt-6 justify-between flex-1">
+    <header className="flex items-center px-10 py-3 justify-between flex-1">
       <div className="flex gap-8 ">
         <GrLinkPrevious className="cursor-pointer opacity-30" />
         <GrLinkNext className="cursor-pointer opacity-30" />
@@ -43,18 +43,18 @@ function Header(props: IProps) {
               <CiSettings className="text-xl" />
             </div>
           </PopoverTrigger>
-          <PopoverContent className="bg-purple-primary text-white border-none">
+          <PopoverContent className="bg-purple-primary text-white border-none p-2">
             <HoverCard >
               <HoverCardTrigger>
                 <div className="flex flex-col">
-                  <div className="flex gap-3 items-center py-5 hover:bg-slate-300 hover:bg-opacity-30">
+                  <div className="flex gap-3 items-center py-3 px-2 rounded-sm hover:bg-slate-300 hover:bg-opacity-30">
                     <AiOutlinePlayCircle className="text-2xl font-light"/>
                     <div className="flex flex-1 justify-between items-center">
                       Trình phát nhạc
                       <MdOutlineNavigateNext className="text-2xl font-light"/>
                     </div>
                   </div>
-                  <div className="flex gap-3 items-center py-5 hover:bg-slate-300 hover:bg-opacity-30">
+                  <div className="flex gap-3 items-center py-3 px-2 rounded-sm hover:bg-slate-300 hover:bg-opacity-30">
                     <AiOutlinePlayCircle className="text-2xl font-light"/>
                     <div className="flex flex-1 justify-between items-center">
                       Giao diện
